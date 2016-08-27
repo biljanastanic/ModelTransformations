@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/StructuralBehavior/src" modelPluginID="StructuralBehavior"
+    modelName="StructuralBehavior" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>StructuralBehavior.ecore</foreignModel>
+  <genPackages prefix="StructuralBehavior" disposableProviderFactory="true" ecorePackage="StructuralBehavior.ecore#/">
+    <genClasses ecoreClass="StructuralBehavior.ecore#//Class">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuralBehavior.ecore#//Class/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuralBehavior.ecore#//Class/Have"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuralBehavior.ecore#//Class/Do"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuralBehavior.ecore#//Method">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuralBehavior.ecore#//Method/methodName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuralBehavior.ecore#//Method/returnType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuralBehavior.ecore#//Method/Input"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuralBehavior.ecore#//Method/Contain"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuralBehavior.ecore#//Method/methodVisibility"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuralBehavior.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuralBehavior.ecore#//Attribute/attributeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuralBehavior.ecore#//Attribute/attributeType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuralBehavior.ecore#//Attribute/attributeValue"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="StructuralBehavior.ecore#//Operation"/>
+    <genClasses ecoreClass="StructuralBehavior.ecore#//Assignment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuralBehavior.ecore#//Assignment/variableName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuralBehavior.ecore#//Assignment/variableValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuralBehavior.ecore#//Assignment/varibleType"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuralBehavior.ecore#//While">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuralBehavior.ecore#//While/CheckWhile"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuralBehavior.ecore#//While/DoWhile"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuralBehavior.ecore#//If">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuralBehavior.ecore#//If/CheckIf"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuralBehavior.ecore#//If/DoIf"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuralBehavior.ecore#//Condition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuralBehavior.ecore#//Condition/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuralBehavior.ecore#//Body">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuralBehavior.ecore#//Body/operations"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuralBehavior.ecore#//Package">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuralBehavior.ecore#//Package/Composed"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

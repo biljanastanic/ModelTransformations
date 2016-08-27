@@ -1,0 +1,54 @@
+«EXTENSION templates::generator»
+
+«DEFINE Root FOR StructuralBehavior::Package»
+«EXPAND ClassDefinition FOREACH Composed»
+«ENDDEFINE»
+
+«DEFINE ClassDefinition FOR StructuralBehavior::Class»
+«FILE name+".java"»
+	public class «name»{
+       
+    «EXPAND DefineAttribute FOREACH Have»
+     «EXPAND DefineMethod FOREACH Do»
+	}
+	«ENDFILE»
+
+«ENDDEFINE»
+
+«DEFINE DefineAttribute FOR StructuralBehavior::Attribute»
+		«attributeType» «attributeName» = «attributeValue» ;
+«ENDDEFINE»
+
+«DEFINE DefineMethod FOR StructuralBehavior::Method»
+		 «methodVisibility» «returnType» «methodName» () {
+		 
+	
+		 
+		 «FOREACH Contain.typeSelect(StructuralBehavior::Assignment) AS assignment»
+		 «assignment.CreateAssignment()»;
+		 «ENDFOREACH»
+		 
+		 «EXPAND CreateIfInstance FOREACH Contain.typeSelect(StructuralBehavior::If)»
+		
+		 «FOREACH Contain.typeSelect(StructuralBehavior::While) AS while»
+		 «while.CreateWhile()»
+		 «ENDFOREACH»		
+		}
+«ENDDEFINE»
+
+
+
+
+«DEFINE CreateIfInstance FOR StructuralBehavior::If»
+    «this.CreateIfStatement()»
+    «FOREACH this.DoIf AS bodies»
+    «bodies.CreateBodyIf()»
+    «ENDFOREACH»
+    }
+«ENDDEFINE»
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated StructuralBehavior -->
+      <package
+            uri="http://SB"
+            class="StructuralBehavior.StructuralBehaviorPackage"
+            genModel="model/StructuralBehavior.genmodel"/>
+   </extension>
+
+</plugin>

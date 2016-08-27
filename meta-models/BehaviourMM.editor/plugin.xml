@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Behaviour -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="Behaviour.presentation.BehaviourModelWizardID"
+            name="%_UI_BehaviourModelWizard_label"
+            class="Behaviour.presentation.BehaviourModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/BehaviourModelFile.gif">
+         <description>%_UI_BehaviourModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Behaviour -->
+      <editor
+            id="Behaviour.presentation.BehaviourEditorID"
+            name="%_UI_BehaviourEditor_label"
+            icon="icons/full/obj16/BehaviourModelFile.gif"
+            extensions="behaviour"
+            class="Behaviour.presentation.BehaviourEditor"
+            contributorClass="Behaviour.presentation.BehaviourActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

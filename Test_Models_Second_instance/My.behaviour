@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Behaviour:MethodFather xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Behaviour="http://behaviour" methodName="Booking" returnType="void" methodVisibility="public">
+  <Contain xsi:type="Behaviour:Assignment" variableName="name" variableValue="&quot;randomName&quot;" variableType="String"/>
+  <Contain xsi:type="Behaviour:If">
+    <CheckIf expression="name== &quot;randomName&quot;"/>
+    <DoIf operations="String x= &quot;sdsd&quot;"/>
+  </Contain>
+  <Contain xsi:type="Behaviour:While">
+    <CheckWhile expression="true"/>
+    <DoWhile operations="String x= &quot;ssdd&quot;"/>
+  </Contain>
+</Behaviour:MethodFather>

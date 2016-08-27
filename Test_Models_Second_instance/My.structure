@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Structure="htto://Structure">
+  <Composed Name="Book">
+    <Have attributeName="Pages" attributeType="int" attributeValue="4"/>
+    <Do methodName="test" returnType="void" methodVisibility="public">
+      <Input attributeName="justATest" attributeType="String" attributeValue="&quot;xcxcxc&quot;"/>
+    </Do>
+  </Composed>
+</Structure:Package>

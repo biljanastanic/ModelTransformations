@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated StructuralBehavior -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="StructuralBehavior.presentation.StructuralBehaviorModelWizardID"
+            name="%_UI_StructuralBehaviorModelWizard_label"
+            class="StructuralBehavior.presentation.StructuralBehaviorModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/StructuralBehaviorModelFile.gif">
+         <description>%_UI_StructuralBehaviorModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated StructuralBehavior -->
+      <editor
+            id="StructuralBehavior.presentation.StructuralBehaviorEditorID"
+            name="%_UI_StructuralBehaviorEditor_label"
+            icon="icons/full/obj16/StructuralBehaviorModelFile.gif"
+            extensions="structuralbehavior"
+            class="StructuralBehavior.presentation.StructuralBehaviorEditor"
+            contributorClass="StructuralBehavior.presentation.StructuralBehaviorActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

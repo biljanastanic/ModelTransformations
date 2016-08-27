@@ -1,0 +1,66 @@
+modeltype Behavior uses "http://behaviour";
+modeltype Structure uses "htto://Structure";
+modeltype StructuralBehavior uses "http://SB";
+
+
+transformation SBTransformer(in behaviorModel: Behavior, in structureModel: Structure, out structuralBehaviorModel: StructuralBehavior);
+
+main() {
+structureModel.objects()[Package]->map StructurePackageToStructuralbehaviorPackage();
+
+
+}
+mapping Package :: StructurePackageToStructuralbehaviorPackage() : StructuralBehavior::Package{
+	result.Composed +=self.Composed->map StructureClassToStructuralbehaviorClass();
+
+}
+
+mapping Class :: StructureClassToStructuralbehaviorClass() : StructuralBehavior::Class{
+	
+	
+	result.name:= self.Name;
+	result.Do +=behaviorModel.objects()[MethodFather]->map BehaviourMethodToStructuralBehaviorMethod();
+	result.Have +=self.Have->map StructureAttributeToStructuralbehaviorAttribute();
+}
+
+mapping Attribute::StructureAttributeToStructuralbehaviorAttribute() : StructuralBehavior::Attribute {
+	result.attributeName :=self.attributeName;
+	result.attributeType :=self.attributeType;
+	result.attributeValue :=self.attributeValue;
+}
+
+mapping MethodFather::BehaviourMethodToStructuralBehaviorMethod() : StructuralBehavior::Method {
+	result.methodName :=self.methodName;
+	result.methodVisibility := self.methodVisibility;
+	result.returnType :=self.returnType;
+	result.Contain +=self.Contain[Assignment]->map BehaviourAssignmentToStructuralBehaviorAssignment();
+	result.Input +=structureModel.objects()[Attribute]->map StructureAttributeToStructuralbehaviorAttribute();
+	result.Contain +=self.Contain[If]->map BehaviourIfToStructuralBehaviorIf();
+	result.Contain += self.Contain[While]->map BehaviourWhileToStructuralBehaviorWhile();
+}
+
+mapping Assignment:: BehaviourAssignmentToStructuralBehaviorAssignment(): StructuralBehavior::Assignment{
+	result.variableName:=self.variableName;
+	result.variableValue :=self.variableValue;
+	result.varibleType :=self.variableType;
+}
+
+mapping If:: BehaviourIfToStructuralBehaviorIf(): StructuralBehavior:: If{
+	result.DoIf +=self.DoIf->map BehaviourBodyToStructuralBehaviorBody();
+	result.CheckIf += self.CheckIf->map BehaviourConditionToStructuralBehaviorCondition();
+}
+mapping While:: BehaviourWhileToStructuralBehaviorWhile(): StructuralBehavior:: While{
+	result.DoWhile +=self.DoWhile->map BehaviourBodyToStructuralBehaviorBody();
+	result.CheckWhile +=self.CheckWhile->map BehaviourConditionToStructuralBehaviorCondition();
+}
+
+mapping Condition:: BehaviourConditionToStructuralBehaviorCondition(): StructuralBehavior:: Condition
+{
+	result.expression := self.expression;
+}
+
+mapping Body:: BehaviourBodyToStructuralBehaviorBody(): StructuralBehavior:: Body{
+	result.operations := self.operations;
+}
+
+

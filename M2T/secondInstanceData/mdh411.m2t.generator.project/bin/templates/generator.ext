@@ -1,0 +1,26 @@
+import StructuralBehavior;
+
+
+
+getBodyOperation(Body this) :
+	operations+";";
+	
+CreateAssignment(Assignment this):
+	 varibleType + " " + variableName+"="+variableValue;
+
+CreateIfStatement(If this):
+
+"if("+CreateCondition(this.CheckIf)+"){";
+
+	
+CreateCondition(Condition this):
+expression;
+
+
+CreateBodyIf(Body this):
+operations+";";
+
+CreateWhile(While this):
+	"while ("+ CreateCondition(this.CheckWhile)+") {"
+		+getBodyOperation(this.DoWhile)+
+	"}";
